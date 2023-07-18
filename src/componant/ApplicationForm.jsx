@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Box, Snackbar, MenuItem } from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
 import axios from 'axios';
+// import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+
 
 const BASE_URL = "http://localhost:8085";
 
@@ -86,6 +90,7 @@ const ApplicationForm = () => {
   }, []);
 
   return (
+    
     <Box sx={{ maxWidth: 600, margin: "0 auto" }}>
       {/* Snackbar and Typography styles */}
       <Snackbar
@@ -212,8 +217,13 @@ const ApplicationForm = () => {
           </Button>
         </Box>
       </form>
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+        <Link to="/AllApplications" style={{ fontSize: "18px" }}>View All Applications</Link>
+      </div>
     </Box>
+    
   );
+
 };
 
 export default ApplicationForm;
